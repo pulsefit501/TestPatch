@@ -18,6 +18,7 @@ provider "aws" {
 resource "aws_instance" "app_server" {
   ami           = "ami-830c94e3"
   instance_type = "t2.micro"
+  monitoring    = true
   vpc_security_group_ids = ["vpc_sg_01"]
   tags = {
     Name = "ExampleAppServerInstance"
